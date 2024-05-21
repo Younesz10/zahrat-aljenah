@@ -1,1 +1,100 @@
 /* Specific Styles for the brands page */
+.brands_page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.brands_page_container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+}
+
+.brands_page_card {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.brand_page_info img {
+  box-shadow: 0 0 15px #0000004d;
+  margin: 30px;
+  border-radius: 15px;
+}
+
+.brand_link {
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-top: -10px;
+}
+
+.brand_link a {
+  padding: 10px;
+  text-decoration: none;
+  background-color: #eb894f;
+  color: black;
+  border-radius: 20px;
+}
+.brand_link a:hover {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+}
+
+.brands_page_container h1 {
+  font-size: 50px;
+  margin-top: 50px;
+  text-align: center;
+  color: #eb894f;
+  margin: 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.brands_page_content img {
+  width: 250px;
+  height: auto;
+}
+
+@media screen and (max-width: 960px) {
+  .brands_page {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .brands_page_container {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .brands_page_card {
+    display: grid;
+    grid-template-columns: auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+  }
+
+  .brands_page_content img {
+    width: 300px;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    display: grid;
+  }
+  .brands_page_container h1 {
+    text-align: center;
+  }
+}

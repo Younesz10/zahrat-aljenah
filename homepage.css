@@ -37,92 +37,6 @@
   height: auto;
 }
 
-.main {
-  height: auto;
-  background-size: cover;
-  width: 100%;
-  text-align: center;
-  margin-top: 50px;
-}
-
-.main h1 {
-  color: #141414;
-  text-align: center;
-  margin-top: 50px;
-  font-size: 50px;
-}
-
-.main_container {
-  background-position: center;
-  background-size: cover; /* Change to "cover" */
-  background-repeat: no-repeat;
-  display: flex;
-  justify-content: center;
-  width: 100%;
-  margin: 0 auto;
-  z-index: 1;
-  margin-top: 150px;
-}
-
-.main_container h4 {
-  font-size: 2rem;
-  text-align: left;
-  color: black;
-  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
-  margin-bottom: -50px;
-}
-.main_container h1 {
-  font-size: 45px;
-  text-align: left;
-  color: black;
-  margin-bottom: 25px;
-  text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.3);
-}
-
-.main_content {
-  align-items: center;
-  justify-content: space-between;
-  display: flex;
-  width: 100%;
-  max-width: 1250px;
-}
-
-.main_card {
-  margin: 50px;
-  width: 100%;
-  max-width: auto;
-}
-
-.main_button {
-  padding: 14px 32px;
-  border: none;
-  border-radius: 25px;
-  color: black;
-  cursor: pointer;
-  position: relative;
-  transition: all 0.35s;
-  outline: none;
-  background-color: #eb894f;
-  margin-bottom: 20px;
-}
-
-.main_button,
-.main_content a {
-  position: relative;
-  z-index: 2;
-  color: black;
-  text-decoration: none;
-}
-
-.main_button:hover {
-  background-color: #fff;
-  transition: all 0.35s;
-  border-radius: 25px;
-  border-width: 0.5px;
-  border-color: black;
-  border-style: solid;
-}
-
 .image_container img {
   width: 425px;
   height: auto;
@@ -141,53 +55,13 @@
 @media screen and (max-width: 960px) {
   .hero {
     display: grid;
-    height: 60vh;
+    height: 70vh;
   }
   .hero p {
     color: #141414;
     text-align: center;
     font-size: 20px;
     width: 400px;
-  }
-  .main {
-    padding: 0;
-    align-items: center;
-    display: grid;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    align-content: center;
-  }
-
-  .main_container {
-    display: grid;
-    flex-direction: column;
-    background-size: 100%;
-    justify-content: center;
-    color: #fff;
-    font-size: 1.5rem;
-    font-family: "Kumbh Sans", sans-serif;
-    margin: 0 auto;
-    width: 100%;
-    max-width: 1150px;
-    height: auto;
-    z-index: 1;
-    padding-bottom: 50px;
-  }
-
-  .main_container h1 {
-    color: #141414;
-    text-align: center;
-    margin-top: 50px;
-    margin-bottom: 10px;
-    font-size: 25px;
-  }
-
-  .image_container img {
-    width: 400px;
-    align-content: center;
-    align-items: center;
-    justify-content: center;
   }
 
   .logo img {
@@ -198,37 +72,6 @@
     justify-content: center;
     text-align: center;
   }
-
-  .main_content {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    margin: auto;
-    text-align: center;
-  }
-
-  .main_container h4 {
-    font-size: 1.3rem;
-    margin-bottom: -50px;
-    text-align: center;
-  }
-  .main_card {
-    align-items: center;
-    justify-content: center;
-    align-content: center;
-    margin: 0;
-  }
-
-  .main_button {
-    font-size: 0.8rem;
-    padding: 16px 30px;
-    border: none;
-    border-radius: 25px;
-    cursor: pointer;
-    position: relative;
-    transition: all 0.35s;
-    outline: none;
-  }
 }
 .brands {
   display: flex;
@@ -238,37 +81,63 @@
 }
 
 .brands_container {
-  display: flex;
+  display: grid;
   align-items: center;
   justify-content: center;
   align-items: center;
+  margin-top: 50px;
 }
 
 .brands_card {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
   align-items: center;
   justify-content: center;
   align-items: center;
 }
 
-.brands_card img {
+.brand_info img {
+  box-shadow: 0 0 15px #0000004d;
+  margin: 15px;
   border-radius: 15px;
 }
 
-.brand_info {
-  box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
-  margin: 30px;
-  border-radius: 15px;
+.brand_link {
+  display: grid;
+  align-items: center;
+  align-content: center;
+  justify-content: center;
+  margin-top: -20px;
 }
-.brands_content h1 {
+
+.brand_link a {
+  padding: 10px;
+  text-decoration: none;
+  background-color: #eebd46;
+  color: black;
+  border-radius: 20px;
+  width: 120px;
+  text-align: center;
+  margin-top: 15px;
+}
+.brand_link a:hover {
+  padding: 10px;
+  text-decoration: none;
+  color: white;
+  border-radius: 20px;
+}
+
+.brands_container h1 {
   font-size: 50px;
+  margin-top: -45px;
+  margin-bottom: 10px;
   text-align: center;
   color: #eb894f;
-  margin: 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
 }
 
 .brands_content img {
-  width: 350px;
+  width: 250px;
   height: auto;
 }
 
@@ -289,21 +158,19 @@
 
   .brands_card {
     display: grid;
-    width: auto;
     justify-content: center;
     align-items: center;
     align-content: center;
+    grid-template-columns: auto;
   }
 
   .brands_content img {
-    width: 340px;
+    width: 300px;
     justify-content: center;
     align-items: center;
     align-content: center;
-    display: grid;
   }
-  .brands_content h1 {
-    font-size: 32px;
+  .brands_container h1 {
     text-align: center;
   }
 }
@@ -393,7 +260,7 @@
     display: grid;
   }
   .benefits_content h1 {
-    font-size: 32px;
+    font-size: 50px;
     text-align: center;
   }
   .benefits_info {
@@ -611,4 +478,11 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+.carousel .product-item {
+  display: none;
+}
+
+.carousel .product-item:first-child {
+  display: block;
 }
