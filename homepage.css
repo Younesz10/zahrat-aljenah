@@ -510,3 +510,105 @@
     padding: 10px;
   }
 }
+.section4 {
+  padding: 10px 0;
+}
+
+.titleHero {
+  text-align: center;
+  margin-bottom: 20px;
+  font-size: 50px;
+  text-align: center;
+  color: #eebd46;
+  margin: 0;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.3);
+}
+
+.productList {
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.product-item {
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+}
+
+.product_image img {
+  max-width: 400px; /* Adjust the maximum width as needed */
+  max-height: 400px; /* Adjust the maximum height as needed */
+  object-fit: cover; /* Maintain aspect ratio and cover the container */
+  box-shadow: 0 0 15px #0000004d;
+}
+
+.product_name {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.slickProduct {
+  display: flex;
+  overflow: hidden;
+}
+
+.slickProduct .product-item {
+  flex: 0 0 auto;
+  margin: 0 5px; /* Adjust the margin as needed */
+}
+/* General styling for the carousel buttons */
+.slick-arrow {
+  color: black; /* Text color of the buttons */
+  border: none; /* Remove default border */
+  border-radius: 50%; /* Make the buttons round */
+  width: 35px; /* Width of the buttons */
+  height: 35px; /* Height of the buttons */
+  display: flex; /* Center the arrow within the button */
+  justify-content: center; /* Center the arrow horizontally */
+  align-items: center; /* Center the arrow vertically */
+  font-size: 14px; /* Font size of the text */
+  position: absolute; /* Absolute positioning to place the buttons outside the carousel */
+  top: 50%; /* Align the buttons vertically in the middle */
+  transform: translateY(-50%); /* Adjust the vertical alignment */
+  z-index: 10; /* Ensure the buttons are above other elements */
+  cursor: pointer; /* Change cursor to pointer on hover */
+  opacity: 0.7; /* Slight transparency */
+  transition: opacity 0.3s; /* Smooth transition for opacity */
+}
+
+.slick-arrow:hover {
+  opacity: 1; /* Full opacity on hover */
+}
+
+/* Specific styling for the previous button */
+.custom-prev {
+  left: 25px; /* Adjust position to the left */
+}
+
+/* Specific styling for the next button */
+.custom-next {
+  right: 25px; /* Adjust position to the right */
+}
+
+/* Optional: Add some margin to the carousel items if needed */
+.slickProduct .slick-slide {
+  margin: 0 10px; /* Adjust as necessary */
+}
+/* Ensure product images do not stretch */
+.slickProduct .product_image img {
+  max-width: 100%; /* Ensure image stays within its container */
+  height: auto; /* Maintain aspect ratio */
+  display: block; /* Remove inline-block spacing */
+}
+
+/* Ensure product items have a fixed height to avoid resizing issues */
+.slickProduct .product-item {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
