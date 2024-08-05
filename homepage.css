@@ -113,7 +113,7 @@
 .brand_link a {
   padding: 10px;
   text-decoration: none;
-  background-color: #eebd46;
+  background-color: #eb894f;
   color: black;
   border-radius: 20px;
   width: 120px;
@@ -485,4 +485,55 @@
 
 .carousel .product-item:first-child {
   display: block;
+}
+
+.location {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  align-content: center;
+  margin-bottom: 20px;
+}
+
+.location_container h1 {
+  font-size: 50px;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #eb894f;
+  text-shadow: 1px 1px 1px rgba(35, 20, 20, 0.3);
+}
+.location_container h3 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+@media screen and (max-width: 960px) {
+  iframe {
+    width: 350px;
+    height: 350px;
+  }
+
+  .location {
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    margin-bottom: 20px;
+    padding: 10px;
+    margin-left: 20px;
+  }
+
+  .location_container h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #eb894f;
+    text-shadow: 1px 1px 1px rgba(35, 20, 20, 0.3);
+  }
+  .location_container h3 {
+    text-align: center;
+    margin-bottom: 20px;
+    font-size: 20px;
+    padding: 10px;
+  }
 }
