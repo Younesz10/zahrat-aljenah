@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   align-content: center;
+  height: 85vh;
 }
 
 .brands_page_container {
@@ -11,7 +12,6 @@
   align-items: center;
   justify-content: center;
   align-items: center;
-  margin-bottom: 100px;
 }
 
 .brands_page_card {

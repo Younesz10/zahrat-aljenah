@@ -511,6 +511,8 @@
   iframe {
     width: 350px;
     height: 350px;
+    display: flex;
+    margin-left: 60px;
   }
 
   .location {
@@ -520,7 +522,6 @@
     align-content: center;
     margin-bottom: 20px;
     padding: 10px;
-    margin-left: 20px;
   }
 
   .location_container h1 {

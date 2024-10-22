@@ -1,1 +1,12 @@
 /* Specific Styles for the products page */
+
+.products {
+  height: 90vh;
+}
+
+.products_container h1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  align-content: center;
+}
