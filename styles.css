@@ -8,6 +8,10 @@
   font-weight: 500;
   font-style: normal;
 }
+
+body {
+  padding-top: 60px; /* Account for fixed navbar height */
+}
 .navbar {
   background-color: #eb894f;
   height: 60px;
@@ -16,9 +20,12 @@
   align-items: center;
   font-size: 0.9rem;
   font-weight: 550;
-  position: sticky;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 999;
-  box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .navbar__container {
@@ -223,16 +230,63 @@
 }
 
 footer {
-  padding: 20px;
-  background-color: #eb894f;
+  padding: 30px 20px;
+  background: linear-gradient(135deg, #eb894f 0%, #d67a3f 100%);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+  border-radius: 15px 15px 0 0;
+  box-shadow: 0 -4px 15px rgba(0, 0, 0, 0.1);
+  margin-top: 40px;
 }
 
-footer p {
-  color: black;
+.footer-content {
+  max-width: 1200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.footer-contact {
+  margin-bottom: 15px;
+}
+
+.footer-contact h3 {
+  color: white;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.footer-contact p {
+  color: white;
+  margin: 8px 0;
+  font-size: 0.95rem;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
+}
+
+.footer-contact a {
+  color: white;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-contact a:hover {
+  color: #f0f0f0;
+  text-decoration: underline;
+}
+
+.footer-copyright {
+  border-top: 1px solid rgba(255, 255, 255, 0.3);
+  padding-top: 15px;
+}
+
+.footer-copyright p {
+  color: white;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.1);
 }
 
 .socials_container {
@@ -257,14 +311,14 @@ footer p {
 
 @media screen and (max-width: 765px) {
   footer {
-    padding: 20px;
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    color: black;
+    padding: 25px 15px;
   }
-
-  footer p {
-    color: black;
+  
+  .footer-contact h3 {
+    font-size: 1.3rem;
+  }
+  
+  .footer-contact p {
+    font-size: 0.9rem;
   }
 }

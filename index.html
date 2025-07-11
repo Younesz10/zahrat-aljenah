@@ -4,6 +4,14 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Zahrat Al Jenah Co. - Your trusted partner in trading excellence. Premium personal care, beauty, and household products from leading brands." />
+    <meta name="keywords" content="personal care, beauty products, household essentials, Winex, Puffy, Isin Therm, Gizmo Baby" />
+    <meta name="author" content="Zahrat Al Jenah Co." />
+    <meta name="robots" content="index, follow" />
+    <link rel="dns-prefetch" href="//fonts.googleapis.com" />
+    <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+    <link rel="dns-prefetch" href="//code.jquery.com" />
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net" />
     <title>Zahrat Al Jenah Co.</title>
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="/homepage.css" />
@@ -26,6 +34,14 @@
     />
   </head>
   <body>
+    <!-- Loading Spinner -->
+    <div id="loading-spinner" class="loading-spinner">
+      <div class="spinner"></div>
+      <p>Loading Zahrat Al Jenah Co...</p>
+    </div>
+
+    <!-- Page Transition Overlay -->
+    <div id="page-transition" class="page-transition"></div>
 
     <!-- Navbar Section -->
     <nav class="navbar">
@@ -44,20 +60,20 @@
 
         <ul class="navbar__menu">
           <li class="navbar__item">
-            <a href="/" class="navbar__links">HOME</a>
+            <a href="/" class="navbar__links" data-section="home">HOME</a>
           </li>
 
           <li class="navbar__item">
-            <a href="/Brands/brands.html" class="navbar__links">BRANDS</a>
+            <a href="/Brands/brands.html" class="navbar__links" data-section="brands">BRANDS</a>
           </li>
           <li class="navbar__item">
-            <a href="/Products/products.html" class="navbar__links">PRODUCTS</a>
+            <a href="/Products/products.html" class="navbar__links" data-section="products">PRODUCTS</a>
           </li>
           <li class="navbar__item">
-            <a href="/About/about.html" class="navbar__links">ABOUT US</a>
+            <a href="/About/about.html" class="navbar__links" data-section="about">ABOUT US</a>
           </li>
           <li class="navbar__item">
-            <a href="/Contact/contact.html" class="navbar__links">CONTACT</a>
+            <a href="/Contact/contact.html" class="navbar__links" data-section="contact">CONTACT</a>
           </li>
         </ul>
       </div>
@@ -68,12 +84,16 @@
         <div class="hero_content">
           <div class="hero_card">
             <div class="logo">
-              <img src="/Images/zahrataljenah-logo.png" alt="Company Logo" />
+              <img src="/Images/zahrataljenah-logo.png" alt="Company Logo" loading="eager" fetchpriority="high" />
             </div>
             <p>
               Experience Reliability, Trust, and Mutual Success with Your
               Trusted Partner in Trading Excellence.
             </p>
+            <div class="hero_cta">
+              <a href="/Products/products.html" class="cta_primary">Explore Our Products</a>
+              <a href="/Contact/contact.html" class="cta_secondary">Get In Touch</a>
+            </div>
           </div>
         </div>
       </div>
@@ -83,27 +103,44 @@
       <div class="brands_container">
         <div class="brands_content">
           <h1>Brands & Partnerships</h1>
+          <p class="brands_intro">We partner with leading manufacturers to bring you the highest quality products in personal care, beauty, and household essentials.</p>
           <div class="brands_card">
             <div class="brand_info">
-              <img src="/Winex-images/Winex-logo.jpg" alt="Winex-logo" />
+              <img src="/Winex-images/Winex-logo.jpg" alt="Winex-logo" loading="lazy" />
+              <div class="brand_description">
+                <h3>Winex</h3>
+                <p>Premium personal care products including bath soaps, beauty soaps, and hygiene essentials. Known for their gentle formulas and refreshing fragrances.</p>
+              </div>
               <div class="brand_link">
                 <a href="https://emsplastic.com.tr/" target="_blank">Learn More</a>
               </div>  
             </div>
             <div class="brand_info">
-              <img src="/Winex-images/Puffy-logo.jpg" alt="Winex-logo" />
+              <img src="/Winex-images/Puffy-logo.jpg" alt="Puffy-logo" loading="lazy" />
+              <div class="brand_description">
+                <h3>Puffy</h3>
+                <p>Innovative household and personal care products designed for modern lifestyles. Offering convenience and quality in every product.</p>
+              </div>
               <div class="brand_link">
                 <a href="https://emsplastic.com.tr/" target="_blank">Learn More</a>
               </div>  
             </div>
             <div class="brand_info">
-              <img src="/Puffy-images/isin-therm-logo.jpg" alt="Winex-logo" />
+              <img src="/Puffy-images/isin-therm-logo.jpg" alt="Isin-therm-logo" loading="lazy" />
+              <div class="brand_description">
+                <h3>Isin Therm</h3>
+                <p>Quality household and personal care products designed for everyday use. Offering practical solutions for modern home and personal hygiene needs.</p>
+              </div>
               <div class="brand_link">
                 <a href="https://emsplastic.com.tr/" target="_blank">Learn More</a>
               </div>  
             </div>
             <div class="brand_info">
-              <img src="/Winex-images/Gizmo-baby-logo.jpg" alt="Winex-logo" />
+              <img src="/Winex-images/Gizmo-baby-logo.jpg" alt="Gizmo-baby-logo" loading="lazy" />
+              <div class="brand_description">
+                <h3>Gizmo Baby</h3>
+                <p>Premium baby care products that prioritize safety and comfort. Gentle formulas designed specifically for your little ones' delicate skin.</p>
+              </div>
               <div class="brand_link">
                 <a href="https://gizmo-baby.com/en/home/" target="_blank">Learn More</a>
               </div>  
@@ -116,26 +153,54 @@
     <hr class="section-divider" />
 
     <div class="image_carousel">
-      <div class="carousel">
-
-        <img src="/Winex-images/6.jpg" alt="Zalhrat Al Jenah Co." />
-        <img src="/Winex-images/7.jpg" alt="Zalhrat Al Jenah Co." />
-        <img src="/Winex-images/8.jpg" alt="Zalhrat Al Jenah Co." />
-        <img src="/Winex-images/2.jpg" alt="Zalhrat Al Jenah Co." />
-
-
-      </div>
-        <button id="prevBtn">&#10094;</button>
-        <button id="nextBtn">&#10095;</button>
+      <h1>Our Showcase Gallery</h1>
+      <p class="gallery_description">Take a visual journey through our product showcase, featuring the finest selections from our trusted brand partners. Each image represents our commitment to quality and excellence.</p>
+      <div class="simple-carousel">
+        <div class="carousel-slide active">
+          <img src="/Winex-images/6.jpg" alt="Winex Beauty Soap Collection" />
+          <div class="slide-caption">
+            <h3>Winex Beauty Soap Collection</h3>
+            <p>Premium beauty soaps with natural ingredients and refreshing fragrances for radiant skin</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="/Winex-images/7.jpg" alt="Winex Bath Soap Variety" />
+          <div class="slide-caption">
+            <h3>Winex Bath Soap Variety</h3>
+            <p>Gentle bath soaps with nourishing formulas for daily hygiene and skin care</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="/Winex-images/8.jpg" alt="Winex Personal Care Products" />
+          <div class="slide-caption">
+            <h3>Winex Personal Care Products</h3>
+            <p>Complete range of personal hygiene and beauty essentials for your daily routine</p>
+          </div>
+        </div>
+        <div class="carousel-slide">
+          <img src="/Winex-images/2.jpg" alt="Isin Therm Product Showcase" />
+          <div class="slide-caption">
+            <h3>Isin Therm Product Showcase</h3>
+            <p>Quality household and personal care products designed for everyday use and modern lifestyles</p>
+          </div>
+        </div>
+        <button class="carousel-btn prev-btn">&#10094;</button>
+        <button class="carousel-btn next-btn">&#10095;</button>
       </div>
     </div>
     <hr class="section-divider" />
 
-    <section class="section4">
+    <section class="section4 winex-section">
       <div class="container">
         <div class="row">
           <div class="col-12 titleHero">
             <span>Winex Products</span>
+          </div>
+          <div class="col-12 product_description">
+            <p>Discover our premium collection of Winex personal care products. From gentle bath soaps to luxurious beauty soaps, each product is crafted with care to provide you with the best in personal hygiene and skincare.</p>
+          </div>
+          <div class="col-12 product_cta">
+            <a href="/Products/products.html" class="section_cta">View All Winex Products</a>
           </div>
           <div class="col-12 productList">
             <button id="prevBtn1" class="slick-prev custom-prev" aria-label="Previous" type="button">&larr;</button>
@@ -143,435 +208,441 @@
               <!-- Product Items -->
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-Bath-Soap-Glycerine.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-Bath-Soap-Glycerine.jpg" class="img-fluid" alt="Winex Bath Soap Glycerine" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Bath Soap Glycerine</span>
+                  <p>Gentle glycerine bath soap for daily hygiene</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-Bath-Soap-Olive.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-Bath-Soap-Olive.jpg" class="img-fluid" alt="Winex Bath Soap Olive" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Bath Soap Olive</span>
+                  <p>Nourishing olive oil bath soap for healthy skin</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/winex-bath-soap-rose.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/winex-bath-soap-rose.jpg" class="img-fluid" alt="Winex Bath Soap Rose" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Bath Soap Rose</span>
+                  <p>Fragrant rose bath soap for a luxurious experience</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-Bath-Soap-Lavender.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-Bath-Soap-Lavender.jpg" class="img-fluid" alt="Winex Bath Soap Lavender" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Bath Soap Lavender</span>
+                  <p>Soothing lavender bath soap for relaxation</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/winex-bath-soap-milky.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/winex-bath-soap-milky.jpg" class="img-fluid" alt="Winex Bath Soap Milky" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Bath Soap Milky</span>
+                  <p>Rich milky bath soap for soft skin</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-bath-soap-cucumber.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-bath-soap-cucumber.jpg" class="img-fluid" alt="Winex Bath Soap Cucumber" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Bath Soap Cucumber</span>
+                  <p>Refreshing cucumber bath soap</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-Bath-Soap-Traditional.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-Bath-Soap-Traditional.jpg" class="img-fluid" alt="Winex Bath Soap Traditional" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Bath Soap Traditional</span>
+                  <p>Classic traditional bath soap</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/winex-bath-soap-olive-green.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/winex-bath-soap-olive-green.jpg" class="img-fluid" alt="Winex Bath Soap Olive Green" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Bath Soap Olive Green</span>
+                  <p>Natural olive green bath soap</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-4x70g-AloeVera.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-4x70g-AloeVera.jpg" class="img-fluid" alt="Winex 4x70g Aloe Vera" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex 4x70g Aloe Vera</span>
+                  <p>Soothing aloe vera beauty soap pack</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-4x70g-Lavender.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-4x70g-Lavender.jpg" class="img-fluid" alt="Winex 4x70g Lavender" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex 4x70g Lavender</span>
+                  <p>Calming lavender beauty soap pack</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-4x70g-Ocean.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-4x70g-Ocean.jpg" class="img-fluid" alt="Winex 4x70g Ocean" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex 4x70g Ocean</span>
+                  <p>Fresh ocean breeze beauty soap pack</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-4x70g-Rose.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-4x70g-Rose.jpg" class="img-fluid" alt="Winex 4x70g Rose" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex 4x70g Rose</span>
+                  <p>Elegant rose beauty soap pack</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-5x55g-AloeVera.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-5x55g-AloeVera.jpg" class="img-fluid" alt="Winex 5x55g Aloe Vera" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex 5x55g Aloe Vera</span>
+                  <p>Nourishing aloe vera soap pack</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-5x55g-Apple.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-5x55g-Apple.jpg" class="img-fluid" alt="Winex 5x55g Apple" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex 5x55g Apple</span>
+                  <p>Fresh apple fragrance soap pack</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-5x55g-Lavender.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-5x55g-Lavender.jpg" class="img-fluid" alt="Winex 5x55g Lavender" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex 5x55g Lavender</span>
+                  <p>Relaxing lavender soap pack</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-5x55g-Lemon.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-5x55g-Lemon.jpg" class="img-fluid" alt="Winex 5x55g Lemon" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex 5x55g Lemon</span>
+                  <p>Zesty lemon fresh soap pack</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-4x110g-Fresh.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-4x110g-Fresh.jpg" class="img-fluid" alt="Winex 4x110g Fresh" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex 4x110g Fresh</span>
+                  <p>Refreshing fresh scent soap pack</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-4x110g-Lemon.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-4x110g-Lemon.jpg" class="img-fluid" alt="Winex 4x110g Lemon" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex 4x110g Lemon</span>
+                  <p>Citrus fresh lemon soap pack</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-4x110g-Rose.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-4x110g-Rose.jpg" class="img-fluid" alt="Winex 4x110g Rose" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex 4x110g Rose</span>
+                  <p>Elegant rose fragrance soap pack</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-Beauty-Soap-Aloe-Vera.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-Beauty-Soap-Aloe-Vera.jpg" class="img-fluid" alt="Winex Beauty Soap Aloe Vera" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Beauty Soap Aloe Vera</span>
+                  <p>Nourishing aloe vera beauty soap</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-Beauty-Soap-75g.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-Beauty-Soap-75g.jpg" class="img-fluid" alt="Winex Beauty Soap 75g" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Beauty Soap 75g</span>
+                  <p>Premium beauty soap for radiant skin</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-Beauty-Soap-CreamMilk.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-Beauty-Soap-CreamMilk.jpg" class="img-fluid" alt="Winex Beauty Soap Cream Milk" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Beauty Soap Cream Milk</span>
+                  <p>Moisturizing cream milk beauty soap</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-Beauty-Soap-Sandal.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-Beauty-Soap-Sandal.jpg" class="img-fluid" alt="Winex Beauty Soap Sandal" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Beauty Soap Sandal</span>
+                  <p>Aromatic sandalwood beauty soap</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-Beauty-Soap-Floral.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-Beauty-Soap-Floral.jpg" class="img-fluid" alt="Winex Beauty Soap Floral" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Beauty Soap Floral</span>
+                  <p>Delicate floral beauty soap</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/Winex-Beauty-Soap-AloeVera.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/Winex-Beauty-Soap-AloeVera.jpg" class="img-fluid" alt="Winex Beauty Soap Aloe Vera" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Beauty Soap Aloe Vera</span>
+                  <p>Soothing aloe vera beauty soap</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/winex-beauty-soap-lemon1.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/winex-beauty-soap-lemon1.jpg" class="img-fluid" alt="Winex Beauty Soap Lemon" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Beauty Soap Lemon</span>
+                  <p>Refreshing lemon beauty soap</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/45.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/45.jpg" class="img-fluid" alt="Winex Product 45" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Product 45</span>
+                  <p>Premium Winex personal care product</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/46.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/46.jpg" class="img-fluid" alt="Winex Product 46" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Product 46</span>
+                  <p>Quality Winex personal care item</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/47.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/47.jpg" class="img-fluid" alt="Winex Product 47" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Product 47</span>
+                  <p>Premium Winex hygiene product</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/48.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/48.jpg" class="img-fluid" alt="Winex Product 48" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Product 48</span>
+                  <p>Essential Winex care solution</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Winex-images/49.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Winex-images/49.jpg" class="img-fluid" alt="Winex Product 49" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Winex Product 49</span>
+                  <p>Advanced Winex personal care</p>
                 </div>
               </div>
-              <!-- Repeat similar blocks for other products -->
+              <!-- Additional Winex Products -->
             </div>
-            <button id="nextBtn1" class="slick-next custom-next" aria-label="Next" type="button">	&rarr;</button>
+            <button id="nextBtn1" class="slick-next custom-next" aria-label="Next" type="button">&rarr;</button>
           </div>
         </div>
       </div>
     </section>
     <hr class="section-divider" />
 
-    <section class="section4">
+    <section class="section4 puffy-section">
       <div class="container">
         <div class="row">
           <div class="col-12 titleHero">
             <span>Puffy Products</span>
           </div>
+          <div class="col-12 product_description">
+            <p>Explore our innovative Puffy product line featuring household essentials and personal care items. Designed for modern convenience while maintaining the highest standards of quality and effectiveness.</p>
+          </div>
+          <div class="col-12 product_cta">
+            <a href="/Products/products.html" class="section_cta">View All Puffy Products</a>
+          </div>
           <div class="col-12 productList">
-            <button id="prevBtn2" class="slick-prev custom-prev" aria-label="Previous" type="button">	&larr;</button>
+            <button id="prevBtn2" class="slick-prev custom-prev" aria-label="Previous" type="button">&larr;</button>
             <div id="carousel2" class="slickProduct productStyle">
               <!-- Product Items -->
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/1.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/1.jpg" class="img-fluid" alt="Puffy Household Product" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Household Essential</span>
+                  <p>Premium household cleaning solution</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/2.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/2.jpg" class="img-fluid" alt="Puffy Personal Care Product" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Personal Care</span>
+                  <p>Essential personal hygiene solution</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/3.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/3.jpg" class="img-fluid" alt="Puffy Household Cleaner" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Household Cleaner</span>
+                  <p>Effective household cleaning solution</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/4.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/4.jpg" class="img-fluid" alt="Puffy Care Product" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Care Product</span>
+                  <p>Premium care and hygiene solution</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/5.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/5.jpg" class="img-fluid" alt="Puffy Hygiene Product" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Hygiene Product</span>
+                  <p>Advanced hygiene and care solution</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/6.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/6.jpg" class="img-fluid" alt="Puffy Cleaning Solution" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Cleaning Solution</span>
+                  <p>Advanced cleaning and hygiene product</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/7.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/7.jpg" class="img-fluid" alt="Puffy Care Essential" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Care Essential</span>
+                  <p>Essential care and hygiene solution</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/8.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/8.jpg" class="img-fluid" alt="Puffy Hygiene Essential" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Hygiene Essential</span>
+                  <p>Premium hygiene and care product</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/9.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/9.jpg" class="img-fluid" alt="Puffy Personal Care Plus" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Personal Care Plus</span>
+                  <p>Advanced personal care solution</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/10.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/10.jpg" class="img-fluid" alt="Puffy Care Premium" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Care Premium</span>
+                  <p>Premium care and hygiene solution</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/11.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/11.jpg" class="img-fluid" alt="Puffy Hygiene Plus" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Hygiene Plus</span>
+                  <p>Advanced hygiene care product</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/12.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/12.jpg" class="img-fluid" alt="Puffy Care Solution" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Care Solution</span>
+                  <p>Effective care and hygiene solution</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/13.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/13.jpg" class="img-fluid" alt="Puffy Hygiene Care" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Hygiene Care</span>
+                  <p>Premium hygiene care product</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/14.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/14.jpg" class="img-fluid" alt="Puffy Care Essential Plus" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Care Essential Plus</span>
+                  <p>Essential care and hygiene solution</p>
                 </div>
               </div>
               <div class="product-item">
                 <div class="product_image">
-                  <img src="/Puffy-images/15.jpg" class="img-fluid" alt="HDPE PLASTİK VARİL">
+                  <img src="/Puffy-images/15.jpg" class="img-fluid" alt="Puffy Hygiene Solution" loading="lazy">
                 </div>
                 <div class="product_name">
-                  <span></span>
-                  <p></p>
+                  <span>Puffy Hygiene Solution</span>
+                  <p>Advanced hygiene care solution</p>
                 </div>
               </div>
               <div class="product-item">
@@ -682,7 +753,7 @@
                   <p></p>
                 </div>
               </div>
-              <!-- Repeat similar blocks for other products -->
+              <!-- Additional Puffy Products -->
             </div>
             <button id="nextBtn2" class="slick-next custom-next" aria-label="Next" type="button">&rarr;</button>
           </div>
@@ -697,6 +768,7 @@
           <h1>Our Success</h1>
           <div class="benefits_card">
             <div class="benefits_info">
+              <div class="benefit-icon"><i class="fas fa-handshake"></i></div>
               <h2>Trusted Partnerships</h2>
               <p>
                 We prioritize long-term relationships built on transparency and
@@ -704,6 +776,7 @@
               </p>
             </div>
             <div class="benefits_info">
+              <div class="benefit-icon"><i class="fas fa-check-circle"></i></div>
               <h2>Quality & Reliable</h2>
               <p>
                 We consistently deliver excellence and reliability in our
@@ -712,6 +785,7 @@
               </p>
             </div>
             <div class="benefits_info">
+              <div class="benefit-icon"><i class="fas fa-lightbulb"></i></div>
               <h2>Industry Expertise</h2>
               <p>
                 With deep industry knowledge and experience, we provide
@@ -746,25 +820,17 @@
   </body>
 
   <footer>
-    <!-- <div class="socials">
-      <div class="socials_container">
-        <p>FOLLOW US</p>
-        <div class="socials_content">
-          <a
-            href="https://www.facebook.com/flonaoffice/"
-            alt="Flona Facebook"
-            target="_blank"
-            ><img src="/images/facebook_icon.png" alt="facebook"
-          /></a>
-          <a
-            href="https://www.instagram.com/flonacompany/"
-            alt="Flona instagram"
-            target="_blank"
-            ><img src="/images/instagram_icon.png" alt="instagram"
-          /></a>
-        </div>
+    <div class="footer-content">
+      <div class="footer-contact">
+        <h3>Contact Us</h3>
+        <p><strong>Phone:</strong> <a href="tel:+9647733777064">+964 773 377 7064</a></p>
+        <p><strong>Phone:</strong> <a href="tel:+9647507778603">+964 750 777 8603</a></p>
+        <p><strong>Email:</strong> <a href="mailto:gold2015_co@outlook.sa">gold2015_co@outlook.sa</a></p>
+        <p><strong>Address:</strong> Iraq, Zakho Commercial Complex - Third Branch, Office No. 89</p>
       </div>
-    </div> -->
-    <p>&copy; 2024 Zahrat Al Jenah Co. All rights reserved.</p>
+      <div class="footer-copyright">
+        <p>&copy; 2025 Zahrat Al Jenah Co. All rights reserved.</p>
+      </div>
+    </div>
   </footer>
 </html>
