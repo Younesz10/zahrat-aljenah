@@ -1,3 +1,4 @@
+
 const menu = document.querySelector("#mobile-menu");
 const menulinks = document.querySelector(".navbar__menu");
 
@@ -14,6 +15,7 @@ menuOptions.forEach(function (option) {
     menulinks.classList.remove("active");
   });
 });
+
 
 var loader = document.getElementById("preloader");
 
@@ -408,5 +410,7 @@ slideInRightStyle.textContent = `
   }
 `;
 document.head.appendChild(slideInRightStyle);
+
+
 
 

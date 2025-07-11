@@ -1,17 +1,19 @@
 /* General CSS for the entire website */
 
-* {
+html, body {
+  width: 100%;
+  max-width: 100vw;
+  overflow-x: hidden;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-style: normal;
-}
-
-body {
+  scroll-behavior: smooth;
   padding-top: 60px; /* Account for fixed navbar height */
 }
+
 .navbar {
   background-color: #eb894f;
   height: 60px;
@@ -155,32 +157,29 @@ body {
   }
 
   .navbar__menu {
-    display: grid;
-    grid-template-columns: auto;
-    margin: 15px;
-    width: 92%;
-    position: absolute;
-    top: -1000px;
-    opacity: 0;
-    transition: all 0.5s ease;
-    height: 60vh;
-    z-index: -1;
-    border-radius: 8px;
+    display: none;
   }
 
   .navbar__menu.active {
-    background: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: absolute;
     top: 100%;
-    opacity: 1;
-    transition: all 0.5s ease;
+    left: 0;
+    width: 100%;
+    background: white;
     z-index: 99;
-    height: auto;
-    font-size: 1.2rem;
     box-shadow: 0 0 1px rgba(0, 0, 0, 0.3);
+    font-size: 1.2rem;
+    transition: all 0.5s ease;
+    height: auto;
   }
 
-  .navbar__toggle {
-    z-index: 999;
+  .navbar__toggle, #mobile-menu {
+    z-index: 1000;
   }
   .navbar__toggle .bar {
     width: 25px;
@@ -226,6 +225,18 @@ body {
   .call-button {
     width: auto;
     height: 5px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  body {
+    padding-top: 40px;
+  }
+  #prevBtn, .custom-prev {
+    left: 5px !important;
+  }
+  #nextBtn, .custom-next {
+    right: 5px !important;
   }
 }
 
