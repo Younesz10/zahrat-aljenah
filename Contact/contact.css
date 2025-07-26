@@ -3,7 +3,7 @@
 /* Contact Hero Section */
 .contact-hero {
   background: linear-gradient(135deg, #eb894f 0%, #f4a261 50%, #e76f51 100%);
-  padding: 120px 0 80px;
+  padding: 60px 0 80px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -166,7 +166,7 @@
 
 @media screen and (max-width: 480px) {
   .contact-hero {
-    padding: 100px 0 60px;
+    padding: 60px 0 60px;
   }
   
   .contact-hero__title {

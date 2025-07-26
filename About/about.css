@@ -3,7 +3,7 @@
 /* About Hero Section */
 .about-hero {
   background: linear-gradient(135deg, #eb894f 0%, #f4a261 50%, #e76f51 100%);
-  padding: 120px 20px 80px;
+  padding: 60px 20px 80px;
   text-align: center;
   position: relative;
   overflow: hidden;
@@ -302,7 +302,7 @@
 /* Responsive Design */
 @media screen and (max-width: 960px) {
   .about-hero {
-    padding: 100px 15px 60px;
+    padding: 60px 15px 60px;
   }
   
   .about-hero h1 {
@@ -355,7 +355,7 @@
 
 @media screen and (max-width: 768px) {
   .about-hero {
-    padding: 80px 10px 50px;
+    padding: 60px 10px 50px;
   }
   
   .about-hero h1 {
@@ -425,7 +425,7 @@
 
 @media screen and (max-width: 480px) {
   .about-hero {
-    padding: 70px 5px 40px;
+    padding: 60px 5px 40px;
   }
   
   .about-hero h1 {

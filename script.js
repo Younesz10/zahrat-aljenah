@@ -2,18 +2,34 @@
 const menu = document.querySelector("#mobile-menu");
 const menulinks = document.querySelector(".navbar__menu");
 
-menu.addEventListener("click", function () {
-  menu.classList.toggle("is-active");
-  menulinks.classList.toggle("active");
-});
-// Close menu when any menu option is selected
-const menuOptions = document.querySelectorAll(".navbar__menu li a");
+// Mobile Menu Functionality
+document.addEventListener('DOMContentLoaded', function() {
+  const menu = document.querySelector("#mobile-menu");
+  const menulinks = document.querySelector(".navbar__menu");
 
-menuOptions.forEach(function (option) {
-  option.addEventListener("click", function () {
-    menu.classList.remove("is-active");
-    menulinks.classList.remove("active");
-  });
+  if (menu && menulinks) {
+    menu.addEventListener("click", function () {
+      menu.classList.toggle("is-active");
+      menulinks.classList.toggle("active");
+    });
+
+    // Close menu when any menu option is selected
+    const menuOptions = document.querySelectorAll(".navbar__menu li a");
+    menuOptions.forEach(function (option) {
+      option.addEventListener("click", function () {
+        menu.classList.remove("is-active");
+        menulinks.classList.remove("active");
+      });
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', function(event) {
+      if (!menu.contains(event.target) && !menulinks.contains(event.target)) {
+        menu.classList.remove("is-active");
+        menulinks.classList.remove("active");
+      }
+    });
+  }
 });
 
 
@@ -374,42 +390,7 @@ document.addEventListener('DOMContentLoaded', function() {
   document.head.appendChild(style);
 });
 
-// Enhanced Mobile Menu Animation
-const mobileMenu = document.querySelector('#mobile-menu');
-const menuLinks = document.querySelector('.navbar__menu');
 
-if (mobileMenu && menuLinks) {
-  mobileMenu.addEventListener('click', function() {
-    this.classList.toggle('is-active');
-    menuLinks.classList.toggle('active');
-    
-    // Add animation to menu items
-    const menuItems = menuLinks.querySelectorAll('li');
-    menuItems.forEach((item, index) => {
-      if (menuLinks.classList.contains('active')) {
-        item.style.animation = `slideInRight 0.3s ease forwards ${index * 0.1}s`;
-      } else {
-        item.style.animation = 'none';
-      }
-    });
-  });
-}
-
-// Add slideInRight animation
-const slideInRightStyle = document.createElement('style');
-slideInRightStyle.textContent = `
-  @keyframes slideInRight {
-    from {
-      opacity: 0;
-      transform: translateX(30px);
-    }
-    to {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
-`;
-document.head.appendChild(slideInRightStyle);
 
 
 
